@@ -4,6 +4,7 @@ sudo docker run -d --name opennebula -v opennebula_data:/var/lib/one -p 2616:261
 
 sudo docker ps
 
+sudo docker start -ai 3fec47d599ea 
 sudo docker logs opennebula
 
 sudo docker exe -it opennebula_data:/var/lib/one/.one/one-auth
