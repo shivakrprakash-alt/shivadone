@@ -1,0 +1,7 @@
+sudo docker pull nginx:latest
+
+sudo docker run -d --name nginx -p 8081:80 nginx:latest
+
+sudo docker ps
+
+http://localhost:8081
