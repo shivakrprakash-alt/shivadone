@@ -1,0 +1,20 @@
+mkdir krdocker
+
+   cd krdocker
+
+FROM ubuntu:latest
+CMD ["echo", "HI AM SHIVA.... ."]
+
+
+   sudo docker build -f dockerfile -t shiva-dockerfile .
+
+
+  sudo docker run shiva-dockerfile
+
+  sudo docker tag shiva(username in ubuntu)-dockerfile shiva20062006/shiva-docker:latest
+
+  sudo docker push shiva20062006/shiva-dockerfile:latest
+
+  sudo docker pull shiva2006/shiva-dockerfile:latest
+
+  sudo docker run shiva-dockerfile
