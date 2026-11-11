@@ -8,7 +8,7 @@ sudo docker run -d --name hadoop -p 9870:9870 -p 8088:8088 apache/hadoop:3.5.0
 sudo docker ps
 sudo docker ps -a
 sudo docker start -ai hadoop-lab
-
+sudo docker start -ai 3a8bf05adc97
 mkdir -p /tmp/wordcount/input
 
 echo "hadoop is easy" > /tmp/wordcount/input/textfile.txt
