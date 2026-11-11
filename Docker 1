@@ -1,0 +1,57 @@
+CONTAINER ID   IMAGE                                   COMMAND                  CREATED          STATUS                      PORTS                                         NAMES
+bfe4c24ca788   hello-world                             "/hello"                 21 seconds ago   Exited (0) 18 seconds ago                                                 trusting_dhawan
+b2b1771dd1f5   shiva-rk                                "echo 'HI I AM DISCO…"   20 hours ago     Exited (0) 20 hours ago                                                   clever_panini
+ee56a304240f   shiva-rk                                "echo 'HI I AM DISCO…"   20 hours ago     Exited (0) 20 hours ago                                                   hardcore_hamilton
+ec93ee0c9b46   5bf12ff51c66                            "/bin/sh -c '['echo'…"   20 hours ago     Exited (127) 20 hours ago                                                 nice_poincare
+f68566dd1737   5bf12ff51c66                            "/bin/sh -c '['echo'…"   20 hours ago     Exited (127) 20 hours ago                                                 compassionate_spence
+be7cfb1aaaee   hello-world                             "/hello"                 20 hours ago     Exited (0) 20 hours ago                                                   clever_agnesi
+9d8e9481d0f2   5bf12ff51c66                            "/bin/sh -c '['echo'…"   20 hours ago     Exited (127) 20 hours ago                                                 charming_darwin
+274b246e3a54   shiva20062006/shiva-dockerfile:latest   "/bin/sh -c '['echo'…"   26 hours ago     Exited (127) 26 hours ago                                                 quirky_chebyshev
+cf5bf307b180   shiva-dockerfile                        "/bin/sh -c '['echo'…"   26 hours ago     Exited (127) 26 hours ago                                                 gifted_kalam
+f6c1396fb459   hello-world                             "/hello"                 27 hours ago     Exited (0) 27 hours ago                                                   nervous_snyder
+6f7c6035867d   shiva20062006/shiva-docker:latest       "echo 'HI SHIVA DONE…"   10 days ago      Exited (0) 10 days ago                                                    eager_rosalind
+eb4e57d55ebc   shiva20062006/shiva-docker1:latest      "/bin/sh -c '['echo'…"   10 days ago      Exited (127) 10 days ago                                                  unruffled_hofstadter
+4454205b6d74   shiva-docker1                           "/bin/sh -c '['echo'…"   10 days ago      Exited (127) 10 days ago                                                  compassionate_dhawan
+299b7afe2b09   aa0167b653cf                            "echo 'hi sHIVA GOOD…"   11 days ago      Exited (0) 11 days ago                                                    focused_antonelli
+30fedafd4520   aa0167b653cf                            "echo 'hi sHIVA GOOD…"   11 days ago      Exited (0) 11 days ago                                                    objective_moore
+67d4f772a8bf   ubuntu:22.04                            "/bin/bash"              12 days ago      Exited (0) 12 days ago                                                    ansible
+97ff2c989b9d   cytopia/ansible                         "/bin/sh"                12 days ago      Exited (127) 12 days ago                                                  vibrant_brown
+652b0db97291   cytopia/ansible                         "/bin/sh"                12 days ago      Exited (7) 12 days ago                                                    nostalgic_wozniak
+cd59098c478c   shiva20062006/shiva-file2:latest        "echo SUCEDDFULLY."      12 days ago      Exited (0) 12 days ago                                                    stoic_bhabha
+d7c6b68669ea   shiva20062006/shiva-docker:latest       "echo 'HI SHIVA DONE…"   12 days ago      Exited (0) 12 days ago                                                    busy_dubinsky
+f312d31542b1   shiva20062006/nginx:latest              "/docker-entrypoint.…"   2 weeks ago      Exited (0) 2 weeks ago                                                    amazing_feistel
+3a8bf05adc97   apache/hadoop:3.5.0                     "/usr/local/bin/dumb…"   2 weeks ago      Exited (0) 21 minutes ago                                                 hadoop
+8873e5e88ffe   nginx                                   "/docker-entrypoint.…"   2 weeks ago      Exited (127) 2 weeks ago                                                  web
+527e1090771c   shiva20062006/shiva-docker:latest       "echo 'HI SHIVA DONE…"   2 weeks ago      Exited (0) 2 weeks ago                                                    sharp_colden
+c82106b1ad11   hello-world                             "/hello"                 2 weeks ago      Exited (0) 2 weeks ago                                                    flamboyant_varahamihira
+f111f9b2c785   shiva20062006/shiva-docker:latest       "echo 'HI SHIVA DONE…"   2 weeks ago      Exited (0) 2 weeks ago                                                    mystifying_faraday
+6353788096f1   shiva-docker                            "echo 'HI SHIVA DONE…"   2 weeks ago      Exited (0) 2 weeks ago                                                    zealous_kilby
+9eb85cc80ecc   hello-world                             "/hello"                 2 weeks ago      Exited (0) 2 weeks ago                                                    xenodochial_booth
+3fec47d599ea   opennebula/opennebula:latest            "/entrypoint.sh supe…"   2 weeks ago      Exited (0) 11 days ago                                                    opennebula
+7816f0f7e484   13c7504c5fde                            "echo 'hi suceesfull…"   2 weeks ago      Exited (0) 2 weeks ago                                                    dreamy_wescoff
+4bfb9704a5c3   13c7504c5fde                            "."                      2 weeks ago      Created                                                                   musing_goldberg
+0a239ef1cb2d   hello-world                             "/hello"                 2 weeks ago      Exited (0) 2 weeks ago                                                    crazy_moser
+ea0bd382a0fb   shiva-file3                             "echo 'NOW DONE WE R…"   3 weeks ago      Exited (0) 3 weeks ago                                                    lucid_nightingale
+2534a729dfdc   shiva-file3                             "echo 'NOW DONE WE R…"   3 weeks ago      Exited (0) 3 weeks ago                                                    competent_gould
+844929a5b1fa   shiva20062006/shiva-file2:latest        "echo SUCEDDFULLY."      3 weeks ago      Exited (0) 3 weeks ago                                                    gifted_margulis
+535cef9c84dc   hello-world                             "/hello"                 3 weeks ago      Exited (0) 3 weeks ago                                                    gracious_mcnulty
+e7348fe887e4   shiva-file2                             "echo SUCEDDFULLY."      3 weeks ago      Exited (0) 3 weeks ago                                                    interesting_blackburn
+a911c2c9da33   shiva-file                              "echo last."             3 weeks ago      Exited (0) 3 weeks ago                                                    gracious_perlman
+c0b142e61f71   shiva-hello                             "echo 'Hello Shiva! …"   3 weeks ago      Exited (0) 3 weeks ago                                                    nifty_bell
+09d93b0cedc3   shiva-hello                             "echo 'Hello Shiva! …"   3 weeks ago      Exited (0) 3 weeks ago                                                    wizardly_feynman
+4e66aca766b7   shiva-hello                             "echo 'Hello Shiva! …"   3 weeks ago      Exited (0) 3 weeks ago                                                    crazy_gates
+7bbb6f5822f4   hello-world                             "/hello"                 3 weeks ago      Exited (0) 3 weeks ago                                                    festive_turing
+c836df7afe5e   jenkins/jenkins:lts                     "/usr/bin/tini -- /u…"   3 weeks ago      Exited (130) 7 days ago                                                   jenkins
+84f7daaeee3b   e57cbcae0291                            "bash"                   3 weeks ago      Created                                                                   ansible-lab
+7860dd8bec41   apache/hadoop:3.5.0                     "/usr/local/bin/dumb…"   3 weeks ago      Exited (255) 2 hours ago                                                  hadoop-lab
+3f7cc90e84e9   hello-world                             "/hello"                 6 weeks ago      Exited (0) 6 weeks ago                                                    condescending_mayer
+2702d29d6333   localhost:5000/shiva-hello:latest       "echo 'Hello Shiva! …"   6 weeks ago      Exited (0) 6 weeks ago                                                    affectionate_mcnulty
+0dec459eb6a2   registry:2                              "/entrypoint.sh /etc…"   6 weeks ago      Exited (255) 6 weeks ago    0.0.0.0:5000->5000/tcp, [::]:5000->5000/tcp   registry
+a98bfb54c81c   shiva-hello                             "echo 'Hello Shiva! …"   6 weeks ago      Exited (0) 6 weeks ago                                                    intelligent_herschel
+f54e7d553aeb   hello-world                             "/hello"                 7 weeks ago      Exited (0) 7 weeks ago                                                    strange_hofstadter
+1e142f08d127   nginx                                   "/docker-entrypoint.…"   7 weeks ago      Exited (0) 18 minutes ago                                                 nginx
+a3e9341bda57   ubuntu                                  "top"                    7 weeks ago      Exited (0) 7 weeks ago                                                    confident_heyrovsky
+6615231d5a51   hello-world                             "/hello"                 7 weeks ago      Exited (0) 7 weeks ago                                                    competent_kapitsa
+7e3fda4a4d40   ubuntu                                  "top"                    7 weeks ago      Exited (0) 7 weeks ago                                                    romantic_swirles
+8ff57717e69f   ubuntu                                  "top"                    7 weeks ago      Exited (0) 7 weeks ago                                                    angry_colden
+38f62ec84f5a   ubuntu                                  "top"                    7 weeks ago      Exited (0) 7 weeks ago                                                    silly_lamport
