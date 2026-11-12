@@ -1,0 +1,295 @@
+
+Complete guide: Transfer files from Windows to Ubuntu using SCP in VirtualBox
+Follow these steps in order. We will configure SSH, set up VirtualBox port forwarding, test the connection, and transfer your file or folder.
+
+What we are going to do
+
+Check your Windows file or folder.
+Start Ubuntu VirtualBox.
+Install and enable SSH in Ubuntu.
+Configure VirtualBox port forwarding.
+Test SSH from Windows.
+Transfer files using SCP.
+Verify the transferred files in Ubuntu.
+Step 1: Check your file in Windows
+Open Windows Command Prompt (CMD).
+
+You mentioned that your folder is located at:
+
+D:\filetransfer
+
+Check whether it exists:
+
+dir D:\filetransfer
+If you see your files, continue.
+
+For example, if the folder contains file.txt, you can transfer either the individual file or the entire folder.
+
+Step 2: Start Ubuntu in VirtualBox
+Run Ubuntu on Windows with VirtualBox: A Simple Step-by-Step Guide | by Trixia Horner | Medium
+medium.com
+Open Oracle VM VirtualBox.
+
+Select your Ubuntu virtual machine.
+
+Click Start.
+
+Wait until the Ubuntu desktop appears.
+
+Log in using your Ubuntu username and password.
+
+Step 3: Open Ubuntu Terminal
+Linux System Cleanup Tools For Disk Space Optimization - Techy20
+techy20.com
+Press:
+
+Ctrl + Alt + T
+
+A terminal window will open.
+
+Important: All commands in Steps 4 and 5 must be executed inside Ubuntu Terminal, not Windows CMD.
+
+Step 4: Install SSH server
+Execute:
+
+sudo apt update
+Wait for the update to finish.
+
+Then execute:
+
+sudo apt install openssh-server -y
+Wait until installation finishes.
+
+Step 5: Enable and start SSH
+Execute these commands one by one:
+
+Enable SSH automatically:
+
+sudo systemctl enable ssh
+Start SSH:
+
+sudo systemctl start ssh
+Check SSH status:
+
+sudo systemctl status ssh
+Expected status: Active (running)
+If you see Active (running), SSH is working.
+
+Press q to exit the status screen.
+
+Step 6: Shut down Ubuntu
+Before configuring VirtualBox:
+
+Click the Ubuntu power menu.
+
+Select Shut Down.
+
+Wait until the virtual machine is completely powered off.
+
+Do not save the VM state; shut it down completely.
+
+Step 7: Configure VirtualBox port forwarding
+Tutorial Port Forwarding Pada Virtual Box | Anggi's Notes
+notes.anggipradana.com
+Follow these steps carefully:
+
+Open Oracle VirtualBox.
+
+Select your Ubuntu VM.
+
+Click Settings.
+
+Select Network.
+
+Under Adapter 1, select NAT.
+
+Expand Advanced.
+
+Click Port Forwarding.
+
+How to SSH Into a VirtualBox Ubuntu VM From Windows - Password Authentication (Step-By-Step Guide) - DEV Community
+dev.to
+Click the + icon to add a new rule.
+
+Enter the following values:
+
+Field
+
+Value
+
+Name
+
+SSH
+
+Protocol
+
+TCP
+
+Host IP
+
+127.0.0.1
+
+Host Port
+
+2222
+
+Guest IP
+
+Leave blank
+
+Guest Port
+
+22
+
+Your final configuration should look like this:
+
+SSH port forwarding
+
+Host address
+
+127.0.0.1:2222
+
+Ubuntu guest
+
+Port 22
+
+TCP forwarding
+Click OK, then click OK again.
+
+Step 8: Start Ubuntu again
+Select your Ubuntu VM.
+
+Click Start.
+
+Log in to Ubuntu.
+
+Open Terminal using Ctrl + Alt + T.
+
+Check SSH:
+
+sudo systemctl status ssh
+Make sure it displays:
+
+Active (running)
+
+Step 9: Test SSH connection from Windows
+Now go back to Windows CMD.
+
+Execute:
+
+ssh -p 2222 vboxuser@127.0.0.1
+Here:
+
+2222 = VirtualBox host port.
+
+vboxuser = Your Ubuntu username.
+
+127.0.0.1 = Your Windows local address.
+
+If asked:
+
+Are you sure you want to continue connecting (yes/no/[fingerprint])?
+Type:
+
+yes
+Then enter your Ubuntu password.
+
+SSH connection successful
+You should now be connected to Ubuntu.
+
+To return to Windows CMD, type:
+
+exit
+Step 10: Transfer your file from Windows to Ubuntu
+You mentioned your Windows folder is:
+
+D:\filetransfer
+
+There are two ways to transfer.
+
+Option A: Transfer the entire folder
+
+Run this in Windows CMD:
+
+scp -r -P 2222 "D:\filetransfer" vboxuser@127.0.0.1:~
+Option B: Transfer only file.txt
+
+scp -P 2222 "D:\filetransfer\file.txt" vboxuser@127.0.0.1:~
+Wait until the transfer finishes.
+
+Step 11: Verify the transferred files in Ubuntu
+Open Ubuntu Terminal.
+
+If you transferred the entire folder:
+
+ls -l ~
+You should see:
+
+filetransfer
+Check its contents:
+
+ls -l ~/filetransfer
+If you transferred only file.txt:
+
+ls -l ~/file.txt
+File transfer completed!
+Complete command reference
+Use this table to remember where each command should be executed.
+
+Task
+
+Where to execute
+
+sudo apt update
+
+Ubuntu Terminal
+
+sudo apt install openssh-server -y
+
+Ubuntu Terminal
+
+sudo systemctl enable ssh
+
+Ubuntu Terminal
+
+sudo systemctl start ssh
+
+Ubuntu Terminal
+
+sudo systemctl status ssh
+
+Ubuntu Terminal
+
+Port forwarding
+
+VirtualBox Settings
+
+ssh -p 2222 ...
+
+Windows CMD
+
+scp -r -P 2222 ...
+
+Windows CMD
+
+ls -l
+
+Ubuntu Terminal
+
+Final checklist
+Your progress
+
+0/8 completed
+Windows folder D:\filetransfer exists
+Ubuntu VM is running
+OpenSSH server is installed
+SSH status shows Active (running)
+VirtualBox NAT port forwarding is configured
+Windows SSH connection works
+SCP file transfer completed
+File verified in Ubuntu
+One important thing: If your Ubuntu username is not vboxuser, replace vboxuser in the SSH and SCP commands with the username shown by this Ubuntu command:
+
+whoami
+If you follow all 11 steps in order, you should be able to transfer files from Windows to Ubuntu through VirtualBox.
+
