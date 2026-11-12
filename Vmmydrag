@@ -1,0 +1,42 @@
+Good! You've successfully mounted the VirtualBox Guest Additions CD in Ubuntu.
+
+Now follow these steps:
+
+### Step 1: Open Terminal
+
+Press `Ctrl + Alt + T`.
+
+### Step 2: Install required packages
+
+Run:
+
+```bash
+sudo apt update
+sudo apt install build-essential dkms linux-headers-$(uname -r) -y
+```
+
+### Step 3: Run Guest Additions installer
+
+Run:
+
+```bash
+sudo sh /media/$USER/VBox_GAs_7.2.22/VBoxLinuxAdditions.run
+```
+
+### Step 4: Restart Ubuntu
+
+```bash
+sudo reboot
+```
+
+### Step 5: Enable Drag and Drop
+
+In VirtualBox menu:
+
+Devices → Drag and Drop → Bidirectional
+
+Expected result
+
+You should now be able to drag files between Windows and Ubuntu.
+
+After restarting, send me a screenshot of the terminal output if you get any error.
