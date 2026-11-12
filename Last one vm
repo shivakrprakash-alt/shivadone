@@ -1,0 +1,32 @@
+Yes! In Ubuntu, just do these two steps.
+
+Step 1: Open Ubuntu terminal and install SSH
+
+```bash
+sudo apt update
+sudo apt install openssh-server -y
+```
+
+Step 2: Start SSH service
+
+```bash
+sudo systemctl enable --now ssh
+```
+
+That's all in Ubuntu!
+
+You do NOT need `hostname -I` because we are using VirtualBox NAT with port forwarding.
+
+Now in Windows CMD:
+
+```cmd
+scp -P 2222 C:\transfer\file.txt user@127.0.0.1:~
+```
+
+Replace `user` with your Ubuntu username.
+
+Verify in Ubuntu:
+
+```bash
+ls ~/file.txt
+```
