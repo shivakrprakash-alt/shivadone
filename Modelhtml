@@ -1,0 +1,135 @@
+Yes! You can display the output of a C program on an HTML webpage without Google App Engine (GAE).
+
+Use HTML + C (CGI) + Apache Server.
+
+### 1. C program (`odd.c`)
+
+```
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int n;
+
+    printf("Content-Type: text/html\n\n");
+
+    printf("<html><body>");
+    printf("<h2>Nth Odd Number</h2>");
+
+    n = 5;
+    printf("Nth Odd Number = %d", 2*n-1);
+
+    printf("</body></html>");
+
+    return 0;
+}
+```
+
+### 2. Compile the C program
+
+```
+gcc odd.c -o /usr/lib/cgi-bin/odd.cgi
+```
+
+### 3. Enable CGI in Apache
+
+```
+sudo a2enmod cgi
+sudo systemctl restart apache2
+```
+
+### 4. Run in browser
+
+Open:
+
+```
+http://localhost/cgi-bin/odd.cgi
+```
+
+Expected browser output
+
+## Nth Odd Number
+
+Nth Odd Number = 9
+
+Note: This example uses a fixed input of 5. You can extend it with an HTML form to accept N from the user and pass it to the C program.
+
+No GAE required.
+
+
+
+
+For running your C program on an HTML webpage using Apache CGI (without GAE) in Ubuntu, execute these commands.
+
+### 1. Install required packages
+
+```
+sudo apt update
+sudo apt install apache2 gcc -y
+```
+
+### 2. Enable CGI module
+
+```
+sudo a2enmod cgi
+```
+
+### 3. Start Apache server
+
+```
+sudo systemctl start apache2
+sudo systemctl enable apache2
+sudo systemctl restart apache2
+```
+
+### 4. Create CGI directory (if required)
+
+```
+sudo mkdir -p /usr/lib/cgi-bin
+```
+
+### 5. Check Apache
+
+Open your browser:
+
+```
+http://localhost
+```
+
+You should see the Apache2 Ubuntu Default Page.
+
+### 6. Create and compile C program
+
+```
+nano odd.c
+```
+
+After writing your C code, compile:
+
+```
+gcc odd.c -o odd.cgi
+```
+
+Move it into CGI directory:
+
+```
+sudo mv odd.cgi /usr/lib/cgi-bin/
+sudo chmod 755 /usr/lib/cgi-bin/odd.cgi
+```
+
+### 7. Run in browser
+
+```
+http://localhost/cgi-bin/odd.cgi
+```
+
+Required software installed
+
+| Software | Purpose                           |
+| -------- | --------------------------------- |
+| Apache2  | Web server                        |
+| GCC      | C compiler                        |
+| CGI      | Execute C program through browser |
+
+Important: Your C program must print the HTTP header `Content-Type: text/html` before printing HTML content.
