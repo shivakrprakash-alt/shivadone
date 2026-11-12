@@ -1,0 +1,44 @@
+
+
+
+### Full Python Flask Code – Nth Odd Number
+
+File name: `app.py`
+
+```
+from flask import Flask, requestapp = Flask(__name__)@app.route('/', methods=['GET', 'POST'])def home():    result = ""    if request.method == 'POST':        n = int(request.form['n'])        odd = 2 * n - 1        result = f"Nth Odd Number = {odd}"    return f"""    <html>    <body>        <h2>Nth Odd Number</h2>        <form method="POST">            Enter N:            <input type="number" name="n" min="1" required>            <button type="submit">Submit</button>        </form>        <h3>{result}</h3>    </body>    </html>    """if __name__ == '__main__':    app.run(debug=True)
+```
+
+### Execution commands
+
+Step 1: Install Flask
+
+```
+pip install flask
+```
+
+Step 2: Run Python
+
+```
+python3 app.py
+```
+
+Step 3: Open browser
+
+`http://127.0.0.1:5000`
+
+### Sample output
+
+# Nth Odd Number
+
+Enter N:
+
+5
+
+Submit
+
+## Nth Odd Number = 9
+
+Formula:
+
+\\[ Odd = 2n-1 \\]
