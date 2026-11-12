@@ -1,0 +1,64 @@
+Understood! You want to write the C program normally, execute it, and display its output directly on an HTML webpage — without GAE.
+
+Use C + HTML + Apache CGI.
+
+### 1. Install requirements
+
+```
+sudo apt update
+sudo apt install apache2 gcc -y
+sudo a2enmod cgi
+sudo systemctl restart apache2
+```
+
+### 2. Write C program
+
+```
+nano odd.c
+```
+
+```
+#include <stdio.h>
+
+int main()
+{
+    int n = 5;
+    int odd = 2 * n - 1;
+
+    printf("Content-Type: text/html\n\n");
+
+    printf("<html><body>");
+    printf("<h1> C Program Output </h1>");
+    printf("<h2>Nth Odd Number = %d</h2>", odd);
+    printf("</body></html>");
+
+    return 0;
+}
+```
+
+### 3. Compile C program
+
+```
+gcc odd.c -o odd.cgi
+```
+
+### 4. Move to CGI folder
+
+```
+sudo mv odd.cgi /usr/lib/cgi-bin/
+sudo chmod +x /usr/lib/cgi-bin/odd.cgi
+```
+
+### 5. Display output in web browser
+
+Open:
+
+`http://localhost/cgi-bin/odd.cgi`
+
+Browser output
+
+# C Program Output
+
+# Nth Odd Number = 9
+
+Result: The C program executes on the server, and only its output is displayed in the browser. No GAE is required.
